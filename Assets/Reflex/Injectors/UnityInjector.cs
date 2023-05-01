@@ -76,7 +76,7 @@ namespace Reflex.Injectors
                 if (Extensions.TryGetValue(scene, out var preBuilder))
                 {
                     Extensions.Remove(scene);                    
-                    preBuilder.Invoke(builder);
+                    preBuilder?.Invoke(builder);
                 }
                 
                 if (scene.TryFindAtRoot<SceneScope>(out var sceneScope))
